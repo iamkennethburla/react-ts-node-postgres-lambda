@@ -1,7 +1,7 @@
 {
   "name": "server-main",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "server-main/src",
+  "sourceRoot": "server-main",
   "projectType": "application",
   "targets": {
     "build": {
@@ -11,14 +11,14 @@
       "options": {
         "platform": "node",
         "outputPath": "dist/server-main",
-        "format": ["cjs"],
-        "bundle": false,
-        "main": "server-main/src/main.ts",
+        "format": ["esm"],
+        "bundle": true,
+        "main": "server-main/index.ts",
         "tsConfig": "server-main/tsconfig.app.json",
         "assets": ["server-main/src/assets"],
         "generatePackageJson": true,
         "esbuildOptions": {
-          "sourcemap": true,
+          "sourcemap": false,
           "outExtension": {
             ".js": ".js"
           }

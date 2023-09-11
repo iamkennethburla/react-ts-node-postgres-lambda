@@ -34,5 +34,5 @@ jobs:
       - run: npm i
       - run: npx nx run server-main:build
       - run: cd ./dist/server-main/ && npm i
-      - run: zip -r publish.zip ./dist/server-main/*
+      - run: zip -r publish.zip ./*
       - run: aws lambda update-function-code --function-name=react-ts-node-postgres-lambda-server --zip-file=fileb://publish.zip

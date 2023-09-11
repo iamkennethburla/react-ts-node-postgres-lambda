@@ -33,5 +33,6 @@ jobs:
       - run: npm config set legacy-peer-deps true
       - run: npm i
       - run: npx nx run server-main:build
+      - run: cd ./dist/server-main/ && npm i
       - run: zip -r publish.zip ./dist/server-main/*
-      - run: aws lambda update-function-code --function-name=server-main-ServerMainFunction-Y1lnXKDvTcH3 --zip-file=fileb://publish.zip
+      - run: aws lambda update-function-code --function-name=react-ts-node-postgres-lambda-server --zip-file=fileb://publish.zip

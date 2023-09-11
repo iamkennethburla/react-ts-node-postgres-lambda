@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -30,7 +30,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - run: npm config set legacy-peer-deps true
+      # - run: npm config set legacy-peer-deps true
       - run: npm i
       - run: npx nx run server-main:build
       - run: zip -r publish.zip ./dist/server-main/*

@@ -15,4 +15,4 @@ app.listen(port, host, () => {
 });
 
 
-module.exports.handler = serverless(app)
+export const handler = serverless(app) 

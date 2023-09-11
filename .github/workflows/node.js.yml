@@ -30,7 +30,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - run: npm ci
+      - run: npm i
       - run: npx nx run server-main:build
       - run: zip -r publish.zip ./dist/server-main/*
       - run: aws lambda update-function-code --function-name=server-main-ServerMainFunction-Y1lnXKDvTcH3 --zip-file=fileb://publish.zip

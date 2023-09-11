@@ -1,4 +1,5 @@
 import express from 'express';
+import serverless from "serverless-http"
 
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
@@ -12,3 +13,6 @@ app.get('/', (req, res) => {
 app.listen(port, host, () => {
   console.log(`[ ready ] http://${host}:${port}`);
 });
+
+
+export const handler = serverless(app)

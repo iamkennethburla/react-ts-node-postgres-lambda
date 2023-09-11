@@ -37,4 +37,4 @@ jobs:
       - run: ls
       - run: cd ./dist/server-main && zip -r publish.zip ./*
       - run: ls
-      - run: aws lambda update-function-code --function-name=react-ts-node-postgres-lambda-server --zip-file=fileb://publish.zip
+      - run: aws lambda update-function-code --function-name=react-ts-node-postgres-lambda-server --zip-file=fileb://dist/server-main/publish.zip

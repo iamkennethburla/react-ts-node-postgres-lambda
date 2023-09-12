@@ -32,9 +32,9 @@ jobs:
 
       - run: npm config set legacy-peer-deps true
       - run: npm i
-      - run: npx nx run server-main:build
-      - run: cd ./dist/server-main/ && npm i
+      - run: npx nx run api-main:build
+      - run: cd ./dist/apps/api-main/ && npm i
       - run: ls
-      - run: cd ./dist/server-main && zip -r publish.zip ./*
+      - run: cd ./dist/apps/api-main && zip -r publish.zip ./*
       - run: ls
-      - run: aws lambda update-function-code --function-name=react-ts-node-postgres-lambda-server --zip-file=fileb://dist/server-main/publish.zip
+      - run: aws lambda update-function-code --function-name=react-ts-node-postgres-lambda-server --zip-file=fileb://dist/apps/api-main/publish.zip

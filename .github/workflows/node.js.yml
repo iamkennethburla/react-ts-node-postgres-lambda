@@ -7,8 +7,8 @@ on:
   push:
     branches: ['setup-server-lambda']
     paths:
-      - './apps/api-main/**'
-      - './apps/api-main-e2e/**'
+      - 'apps/api-main/**'
+      - 'apps/api-main-e2e/**'
 
 jobs:
   build:
